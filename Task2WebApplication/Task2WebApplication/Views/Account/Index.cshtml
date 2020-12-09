@@ -1,0 +1,61 @@
+﻿@using Task2WebApplication.Models
+@model List<Account>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table>
+    <tr>
+        <th>
+            Балансовый счет
+        </th>
+        <th>
+            ВХОДЯЩЕЕ САЛЬДО (АКТИВ)
+        </th>
+        <th>
+            ВХОДЯЩЕЕ САЛЬДО (ПАССИВ)
+        </th>
+        <th>
+            ОБОРОТЫ (ДЕБЕТ)
+        </th>
+        <th>
+            ОБОРОТЫ (КРЕДИТ)
+        </th>
+        <th>
+            ИСХОДЯЩЕЕ САЛЬДО (АКТИВ)
+        </th>
+        <th>
+            ИСХОДЯЩЕЕ САЛЬДО (ПАССИВ)
+        </th>
+    </tr>
+   @foreach(var item in Model)
+   {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AccountNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OpeningBalanceActive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OpeningBalancePassive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TurnoverDebit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TurnoverCredit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OutgoingBalanceActive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OutgoingBalancePassive)
+        </td>
+    </tr>
+
+   }
+</table>

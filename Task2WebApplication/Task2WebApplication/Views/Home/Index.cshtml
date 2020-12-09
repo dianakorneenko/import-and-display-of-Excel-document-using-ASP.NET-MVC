@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Import";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Import", "Home", FormMethod.Post, new { enctype = "multipart/form-data", id = "frm-excel" }))
+        {
+            <div style="margin: 15px">
+                Загрузите Excel-файл:
+                <input type="file" name="fileExcel" id="fileExcel" style="margin:15px" />
+                <div style="padding: 15px">
+                    <input type="submit" value="Загрузить" class="btn btn-primary" />
+                </div>
+            </div>
+        }
+   </div>
+</body>
+</html>
